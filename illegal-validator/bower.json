@@ -1,0 +1,25 @@
+{
+    "name": "jquery-illegal",
+    "description": "A decent jquery frontend validator you must have",
+    "version": "1.0.0",
+	"ignore": [
+        "src",
+        "node_modules",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc",
+        "npm-debug.log",
+        "Gruntfile.js",
+        "Gruntfile.js.save",
+        "package.json"
+    ],
+    "dependencies": {
+        "jquery": ">=1.10.2",
+        "bootstrap": ">=3.0.0",
+        "fontawesome": "~4.1.0"
+    }
+}
+
+
+
