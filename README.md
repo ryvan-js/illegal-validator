@@ -9,6 +9,10 @@ to serve the files as close, and fast as possible to your users:
 
 - comming soon
 
+#### Browser support
+
+Jquery Illegal validator works on IE8+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
+
 #### Depedencies
 
 - jquery: >=1.10.2
@@ -141,3 +145,9 @@ Html tag
 	</div>
  </div>
 ```
+
+#### License
+
+Copyright (c) 2014 Ken Wheeler
+
+Licensed under the MIT license.
