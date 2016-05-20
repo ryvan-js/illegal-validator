@@ -27,3 +27,11 @@ Then, before your closing ```<body>``` tag add:
 ```
 
 
+#### Package Managers
+
+```sh
+# Bower
+bower install --save illegal-validator
+
+```
+
