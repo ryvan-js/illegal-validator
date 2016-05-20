@@ -148,6 +148,6 @@ Html tag
 
 #### License
 
-Copyright (c) 2014 Ken Wheeler
+Copyright (c) 2016 Ryvan Prabhu
 
 Licensed under the MIT license.
