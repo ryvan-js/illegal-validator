@@ -1,3 +1,17 @@
+
+/*
+     _ _      _       _
+####ILLIEGAL FORM VALIDATOR	####
+
+ Version: 1.0.0
+  Author: Ryvan Prabhu
+    Repo: http://github.com/ryvan-js/illegal-validator.git
+  Issues: http://github.com/ryvan-js/illegal-validator.git/issues
+  LICENCE: MIT licence(MIT)
+ */
+
+
+
 !function(){
 
 		var regex_pattern = {
@@ -46,7 +60,6 @@
 			keyVal = String.fromCharCode(event.keyCode || event.which).replace(/'/g, "\\'").replace(/\0/g,"");//get key values on every keypress and escapes quotes since we gonna use eval for dynamic validation for restricted input.
 			isValid = false;
 			isStrict = false; 
-			//console.log(isNaN(keyVal));
 			beforeValue = field_value.replace(/\s/g,'');//lock it under local scope
 			value = field_value.replace(/\s/g,'')  + keyVal;//lock it under local scope
 			minValid = true;
@@ -218,10 +231,6 @@
 					new_rules = [];
 					if($(elem).attr('stop-loop') !== "true"){
 
-						// if(e_rules.regexMatch(/^regex/)){
-						// 	e_rules.splice(e_rules.regexMatch(/^regex/),1);
-						// 	e_rules.log(rules);
-						// }
 						if($.map(regex_pattern,function(value,index){ return [index] }).indexOf(rule) > -1){
 							
 
@@ -302,7 +311,6 @@
 				this.label.attr('label-text',this.label.html());
 				}
 
-				//this.label.attr('label-text',this.label.html());
 			});
 
 			$(this.form).find('[rules][type]').on('focus',function(){
