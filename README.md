@@ -103,4 +103,30 @@ bower install --save illegal-validator
 	</div>
 </form>
 ```
+#### Validation Rules
 
+Name | Rule | Description
+------ | ---- | -----------
+Alphabetics Only | alpha | Only Alphabatic characters are allowed
+Alphabetics & Numeric |alphaNum | Only Alphabatic and numbers are allowed
+Numeric | numeric | Only Numbers are allowed
+Email | email | Only a valid email address allowed
+
+
+#### Simple Initialization
+
+```javascript
+$(function(){
+	$('.illegal-form').illegal();
+});
+```
+
+#### Initialization with custom regular expression
+
+```javascript
+$(function(){
+	$('.illegal-form').illegal({
+		"nric" : [ /^[STFG]\d{7}[A-Z]$/ ,"Please enter a valid NRIC number"], //Custom Regex
+	});
+});
+```
