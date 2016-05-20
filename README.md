@@ -48,7 +48,7 @@ bower install --save illegal-validator
 	<div class='form-group'>
 		<label>Age</label>
 		<div class='input-group'>
-			<input type='text'  class='form-control' rules="required|nric">
+			<input type='text'  class='form-control' rules="required|numeric|max:3">
 		</div>
 	</div>
 	<div class='form-group'>
@@ -75,12 +75,10 @@ bower install --save illegal-validator
 			<input type='text' name='password_confirmation' class='form-control' rules="required|numeric|min:6|max:9|confirmation:password" >
 		</div>
 	</div>
-
 	<div class='form-group'>
 	<label>Remark</label>
 	<div class='input-group'>
 		<textarea type='text' class='form-control' rules="required|numeric|min:9|max:8"></textarea> 
-		
 	</div>
 	</div>
 	<div class="checkbox">
@@ -103,6 +101,9 @@ bower install --save illegal-validator
 	</div>
 </form>
 ```
+
+Simply remove "rules" from the html tag to exclude it from validation.
+
 #### Validation Rules
 
 Name | Rule | Description
@@ -129,4 +130,14 @@ $(function(){
 		"nric" : [ /^[STFG]\d{7}[A-Z]$/ ,"Please enter a valid NRIC number"], //Custom Regex
 	});
 });
+```
+Html tag
+
+```html
+ <div class='form-group'>
+	<label>NRIC</label>
+	<div class='input-group'>
+	    <input type='text'  class='form-control' rules="required|nric">
+	</div>
+ </div>
 ```
