@@ -147,9 +147,29 @@ Html tag
 	</div>
  </div>
 ```
+#### Ajax Live Check
 
+set il-ajax-check = < URL> attribute in the input tag to perform live ajax query.
+
+```html
+<div class='input-group'>
+    <input type='text' class='form-control' rules="required|email|alpha|max:20|min:7" il-ajax-check='check.php' >
+</div>
+```
+Server Side(Example):
+Value sent trought post method with "val" parameter.
+
+```php
+<?php
+if($_POST[val] && $_POST[val] === "available_email@domain.com"){
+	echo 1;
+}else{
+	echo 0;
+}
+```
 #### License
 
 Copyright (c) 2016 Ryvan Prabhu
 
 Licensed under the MIT license.
+
