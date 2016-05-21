@@ -116,7 +116,9 @@ Alphabetics Only | alpha | Only Alphabatic characters are allowed
 Alphabetics & Numeric |alphaNum | Only Alphabatic and numbers are allowed
 Numeric | numeric | Only Numbers are allowed
 Email | email | Only a valid email address allowed
-
+Phone | phone | Only a valid phone number allowed
+Minimum Length| min:<n> | Must reach minimum length (Example : Min:6)
+Maximum Length| max:<n> | Set limitation to character/string length  (Example : Max:22)
 
 #### Simple Initialization
 
