@@ -119,6 +119,7 @@ Email | email | Only a valid email address allowed
 Phone | phone | Only a valid phone number allowed
 Minimum Length| min:<n> | Must reach minimum length (Example : Min:6)
 Maximum Length| max:<n> | Set limitation to character/string length  (Example : Max:22)
+Regular Expression | regex:<regex> | Direct regex validation from the html tag (Example : regex:^[a-z0-9]+$)
 
 #### Simple Initialization
 
@@ -146,6 +147,15 @@ Html tag
 	    <input type='text'  class='form-control' rules="required|nric">
 	</div>
  </div>
+```
+or you can directly parse a regex pattern to the rules
+```html
+<div class='form-group'>
+	<label>Email</label>
+	<div class='input-group'>
+		<input type='text' class='form-control' rules="required|regex:^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" >
+	</div>
+</div>
 ```
 #### Ajax Live Check
 

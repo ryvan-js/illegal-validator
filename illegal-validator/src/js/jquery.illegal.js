@@ -44,7 +44,7 @@
 
 		var validator = function(rule,field_value,event,elem){
 			keyVal = String.fromCharCode(event.keyCode || event.which).replace(/'/g, "\\'").replace(/\0/g,"");//get key values on every keypress and escapes quotes since we gonna use eval for dynamic validation for restricted input.
-			isValid = false;
+			isValid = true;
 			isStrict = false; 
 			//console.log(isNaN(keyVal));
 			beforeValue = field_value.replace(/\s/g,'');//lock it under local scope
@@ -107,9 +107,20 @@
 			}
 		
 			if(true){
+				if(rule.match(/^regex:/)){
+					var pattern = rule.match(/^regex:(.*)$/);
+					if(pattern[1]){
+						try{
+							var temp = (new RegExp(pattern[1])).test(value);
+						}catch(e){
+							var temp = false;
+						}
+						if(isValid) isValid = temp;
+					}
+				}
 				if($.inArray(rule,Object.keys(regex_pattern)) > -1){
-					isValid = regex_pattern[rule].test(value);
-					console.log(value,isValid);
+					var temp = regex_pattern[rule].test(value);
+					if(isValid) isValid = temp;
 					if(isValid && ($(elem).attr('il-ajax-check') && $(elem).attr('il-ajax-check') !== "") && $.inArray(rule,live_check) > -1){
 						var hover_board_elem = $(elem).parent().find(".hover-board ul");
 						
@@ -222,10 +233,14 @@
 						// 	e_rules.splice(e_rules.regexMatch(/^regex/),1);
 						// 	e_rules.log(rules);
 						// }
-						if($.map(regex_pattern,function(value,index){ return [index] }).indexOf(rule) > -1){
-							
+						if($.map(regex_pattern,function(value,index){ return [index] }).indexOf(rule) > -1 || rule.match(/^regex:/)){
 
-							$(elem).parent().parent().find('label').attr('illegal-msg',(messages[rule]));
+							if(rule.match(/^regex:/)){
+								$(elem).parent().parent().find('label').attr('illegal-msg',"Invalid input");
+							}else{
+								$(elem).parent().parent().find('label').attr('illegal-msg',(messages[rule]));
+							}
+
 							
 							//clean up extra regex  patterns
 								preserve_first_rule = rule;
@@ -233,7 +248,7 @@
 									$.each(temp_array,function(index,rule){
 										this.regex_pattern = $.map(regex_pattern,function(value,index){ return [index] });
 										//console.log("["+index+"]execute:"+temp_array[index]+" > found on pos:"+temp_array.indexOf(rule)+" of "+temp_array);
-										if(this.regex_pattern.indexOf(rule) > -1){
+										if(this.regex_pattern.indexOf(rule) > -1 || rule.match(/^regex:/)){
 											
 										}else{
 											new_rules.push(rule);
