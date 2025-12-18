@@ -3,11 +3,11 @@
 <head>
 <title>Illegal Sample</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href='bower_components/bootstrap/dist/css/bootstrap.css' rel='stylesheet' />
-<link href='bower_components/font-awesome/css/font-awesome.css' rel='stylesheet' />
-<link href='illegal/dist/css/illegal-jquery.css' rel='stylesheet' />
-<script src='bower_components/jquery/dist/jquery.js'></script>
-<script src='illegal/src/js/jquery.illegal.js'></script>
+<link href='bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
+<link href='bower_components/fontawesome/css/font-awesome.min.css' rel='stylesheet' />
+<link href='illegal-validator/dist/css/jquery.illegal.css' rel='stylesheet' />
+<script src='bower_components/jquery/dist/jquery.min.js'></script>
+<script src='illegal-validator/dist/js/jquery.illegal.js'></script>
 </head>
 <body>
 <div class='container'>
