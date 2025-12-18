@@ -3,10 +3,10 @@
 <head>
 <title>Illegal Sample</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href='bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
-<link href='bower_components/fontawesome/css/font-awesome.min.css' rel='stylesheet' />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-4@4.7.4/css/font-awesome.min.css">
 <link href='illegal-validator/dist/css/jquery.illegal.css' rel='stylesheet' />
-<script src='bower_components/jquery/dist/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src='illegal-validator/dist/js/jquery.illegal.js'></script>
 </head>
 <body>
